@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">androidclub24</string>
+    <string name="enter_username_hint">Enter UserName</string>
+    <string name="enter_password_hint">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="first_name">Enter First Name</string>
+    <string name="signup">SignUp</string>
+    <string name="add">Add</string>
+    <string name="rating">Rating</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add_fragment">Hello Add Fragment Loaded</string>
+</resources>
