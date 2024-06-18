@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.androidclub24.R;
 
@@ -61,6 +64,23 @@ public class AddFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false);
+        View view = inflater.inflate(R.layout.fragment_add, container, false);
+
+        EditText edtN1  = view.findViewById(R.id.edtN1);
+        EditText edtn2 = view.findViewById(R.id.edtN2);
+
+        Button btnAdd = view.findViewById(R.id.btnAdd);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //read
+                //int
+                //add
+                //set
+                Toast.makeText(view.getContext(),"Addition",Toast.LENGTH_LONG).show();
+            }
+        });
+        return view;
     }
 }
