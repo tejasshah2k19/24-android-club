@@ -36,15 +36,39 @@
         android:layout_below="@id/edtUserNameSignup"
         />
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/btnSignup"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@id/edtPasswordSignup"
-    android:layout_marginTop="50dp"
-    android:text="@string/signup"
-    />
 
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:id="@+id/rbg_gender"
+    android:layout_below="@+id/edtPasswordSignup"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal"
+    >
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/female"
+        />
+
+
+</RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignup"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/edtPasswordSignup"
+        android:layout_marginTop="70dp"
+        android:text="@string/signup"
+        />
 
 </RelativeLayout>
