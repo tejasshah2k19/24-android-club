@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddBookActivity"
+    android:layout_marginTop="100dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_book_name"
+            android:text="@string/book_name"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_book_name"
+            android:layout_toRightOf="@+id/tv_book_name"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_book_price"
+            android:text="@string/book_price"
+            android:textSize="20sp"
+            android:layout_below="@+id/tv_book_name"
+            android:layout_marginTop="50dp"
+            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edt_book_price"
+                android:layout_toRightOf="@+id/tv_book_price"
+                android:layout_below="@+id/edt_book_name"
+                android:layout_marginTop="30dp"
+
+                />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_add_book"
+        android:text="@string/add_book"
+        android:layout_below="@+id/edt_book_price"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>
