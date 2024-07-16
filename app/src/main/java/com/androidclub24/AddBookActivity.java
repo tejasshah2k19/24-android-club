@@ -15,6 +15,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.androidclub24.model.BookModel;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+
 
 public class AddBookActivity extends AppCompatActivity {
 
@@ -43,9 +49,29 @@ public class AddBookActivity extends AppCompatActivity {
                 SharedPreferences sp = getApplicationContext().getSharedPreferences("book_app", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor =  sp.edit();
 
-                editor.putString("bookName",bookName);
-                editor.putInt("bookPrice",bookPrice);
-                editor.apply();
+                BookModel bookModel = new BookModel();
+                bookModel.setBookName(bookName);
+                bookModel.setPrice(bookPrice);
+
+                //sp->array list of book model
+                String listJson = sp.getString("bookList",null);
+                Gson gson = new Gson();
+
+                if(listJson == null){
+                    ArrayList<BookModel> listBook = new ArrayList<>();
+                    listBook.add(bookModel);
+                    String bookListStr = gson.toJson(listBook);
+                    editor.putString("bookList",bookListStr);
+                    editor.apply();
+                }else{
+                    TypeToken<ArrayList<BookModel>> arrayListTypeToken = new TypeToken<ArrayList<BookModel>>() {};
+                    ArrayList<BookModel> listBook=  gson.fromJson(listJson,arrayListTypeToken);
+                    listBook.add(bookModel);
+                    String bookListStr = gson.toJson(listBook);
+                    editor.putString("bookList",bookListStr);
+                    editor.apply();
+                }
+
 
                 Toast.makeText(getApplicationContext(),"Book Added",Toast.LENGTH_LONG).show();
 
