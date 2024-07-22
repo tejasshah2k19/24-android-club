@@ -59,16 +59,16 @@ public class AddBookActivity extends AppCompatActivity {
 
                 if(listJson == null){
                     ArrayList<BookModel> listBook = new ArrayList<>();
-                    listBook.add(bookModel);
+                    listBook.add(bookModel);//first book
                     String bookListStr = gson.toJson(listBook);
                     editor.putString("bookList",bookListStr);
                     editor.apply();
                 }else{
                     TypeToken<ArrayList<BookModel>> arrayListTypeToken = new TypeToken<ArrayList<BookModel>>() {};
                     ArrayList<BookModel> listBook=  gson.fromJson(listJson,arrayListTypeToken);
-                    listBook.add(bookModel);
+                    listBook.add(bookModel);//second
                     String bookListStr = gson.toJson(listBook);
-                    editor.putString("bookList",bookListStr);
+                    editor.putString("bookList", bookListStr);
                     editor.apply();
                 }
 
